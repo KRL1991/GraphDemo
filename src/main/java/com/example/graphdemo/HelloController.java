@@ -2,10 +2,7 @@ package com.example.graphdemo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
-import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 
@@ -22,20 +19,18 @@ public class HelloController {
     private Button StartButton;
 
     @FXML
-    private LineChart<String,Integer> tempGraph;
+    private LineChart<String, Integer> tempGraph;
 
     @FXML
     void startGraph(ActionEvent event) {
 
 
-
-
-
         for (int i = 0; i < 10; i++) {
-            countY.addAndGet( 1);
+            countY.addAndGet(1);
             countX.addAndGet(10);
 
-            series1.getData().add(new XYChart.Data<String,Integer>(Integer.toString(countY.intValue()),countX.intValue()));
+
+            series1.getData().add(new XYChart.Data<String, Integer>(Integer.toString(countY.intValue()), countX.intValue()));
 
         }
         tempGraph.getData().add(series1);
